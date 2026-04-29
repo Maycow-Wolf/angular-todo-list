@@ -1,0 +1,99 @@
+<div class="app-container">
+  <h1 class="app-title">Minha Lista de Tarefas</h1>
+
+<div class="card p-3">
+     
+    <div>
+        <input 
+            type="text" 
+            class="form-control mb-3" 
+            (keyup.enter)="addTask()"
+            placeholder="Digite uma tarefa" 
+            [(ngModel)]="newTask">
+
+        <button 
+            class="btn btn-primary mb-3" 
+            (click)="addTask()">
+            Adicionar
+        </button>
+    </div>
+    
+    
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <div>
+            <strong>Total:</strong> {{ totalCount$ | async }} |
+            <strong>Concluídas:</strong> {{ completedCount$ | async }}
+        </div>
+
+        <button 
+            class="btn btn-warning" 
+            (click)="clearCompleted()">
+            Limpar concluídas
+        </button>
+
+    </div>
+
+    <div class="btn-group gap-2">
+
+        <button 
+            class="btn"
+            [ngClass]="(filter$ | async) === 'all' ? 'btn-secondary' : 'btn-outline-secondary'"
+            (click)="filter$.next('all')">
+            Todas
+        </button>
+
+        <button 
+            class="btn"
+            [ngClass]="(filter$ | async) === 'completed' ? 'btn-secondary' : 'btn-outline-secondary'"
+            (click)="filter$.next('completed')">
+            Concluídas
+        </button>
+
+        <button 
+            class="btn" 
+            [ngClass]="(filter$ | async) === 'pending' ? 'btn-secondary' : 'btn-outline-secondary'"
+            (click)="filter$.next('pending')">
+            Pendentes
+        </button>
+
+    </div>
+    <br>
+
+    <div class="notebook">
+
+        <ul class="list-group task-list">
+
+            <li *ngFor="let task of (filteredTasks$ | async)" 
+                class="list-group-item d-flex justify-content-between align-items-center task-item">
+
+                <div>
+                    <input 
+                        type="checkbox" 
+                        class="form-check-input me-2" 
+                        [checked]="task.completed"
+                        (change)="toggleTask(task.id)">
+
+                    <span 
+                        class="text-break"
+                        [class.completed]="task.completed"
+                        (click)="toggleTask(task.id)"
+                        style="cursor: pointer">
+                        {{ task.title }}
+                    </span>
+
+                    <small
+                        class="text-muted d-block">
+                        ({{ task.createdAt | date: 'dd/MM/yyyy HH:mm' }})
+                    </small>
+                </div>
+
+                <button 
+                    class="btn btn-danger btn-sm" 
+                    (click)="removeTask(task.id)">
+                    X
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+.app-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #5a4a2f;
+  letter-spacing: 1px;
+  flex-shrink: 0; /* evita compressão */
+}
+
+.app-title::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 3px;
+  background: #d6c88c;
+  margin: 8px auto 0;
+  border-radius: 2px; /* leve acabamento */
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* estado concluído */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* card principal */
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* bloco estilo caderno */
+.notebook {
+  background: #f5ebb1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* lista com scroll */
+.task-list {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* substitui margin-bottom */
+}
+
+/* item da tarefa */
+.task-item {
+  background: #fcf7e3;
+  border-radius: 4px;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+/* hover mais suave */
+.task-item:hover {
+  transform: translateY(-1px);
+  background: #fff9db;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+/* Estilo quando estiver marcado */
+.form-check-input:checked {
+  background-color: #8a7a00;
+  border-color: #8a7a00;
+}
+
+/* texto da tarefa */
+.task-item span {
+  font-size: 1.02rem;
+  color: #2a2109;
+}
