@@ -1,27 +1,84 @@
-# TodoList
+# 📝 To-Do List Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+Aplicação de lista de tarefas desenvolvida com Angular, com foco em boas práticas, gerenciamento de estado com RxJS e interface moderna.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Demonstração
 
-## Code scaffolding
+🔗 Acesse o projeto:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+https://angular-todo-list-mu.vercel.app/
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📸 Funcionalidades
 
-## Running unit tests
+* ✅ Adicionar tarefas
+* ✔️ Marcar como concluída
+* 🔄 Filtros (todas, concluídas, pendentes)
+* 🗑 Remover tarefas
+* 🧹 Limpar tarefas concluídas
+* 📅 Data e hora de criação
+* 📊 Contador de tarefas
+* 💾 Persistência com localStorage
+* 🎨 Interface estilo “caderno”
+* 📜 Scroll interno na lista (UX tipo app moderno)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🛠 Tecnologias utilizadas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Angular (Standalone Components)
+* TypeScript
+* RxJS (BehaviorSubject)
+* Bootstrap
+* HTML5 + CSS3
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🧠 Conceitos aplicados
+
+* Gerenciamento de estado reativo
+* Componentização
+* Boas práticas de UI/UX
+* Persistência no navegador
+* Manipulação de listas e filtros
+* Layout com Flexbox
+
+---
+
+## 📂 Estrutura do projeto
+
+src/app
+components/
+models/
+services/
+
+---
+
+## ⚙️ Como rodar o projeto localmente
+
+```bash
+# clonar repositório
+git clone https://github.com/Maycow-Wolf/todo-list.git
+
+# acessar pasta
+cd todo-list
+
+# instalar dependências
+npm install
+
+# rodar aplicação
+ng serve
+```
+
+Acesse em: http://localhost:4200
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Maycow Wolf
+
+
