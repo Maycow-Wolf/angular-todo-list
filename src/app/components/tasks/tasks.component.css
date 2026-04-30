@@ -17,6 +17,22 @@
   border-radius: 2px; /* leve acabamento */
 }
 
+.task-header {
+  gap: 10px;
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  .task-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-header button {
+    align-self: flex-start;
+  }
+}
+
 .app-container {
   height: 100vh;
   display: flex;
